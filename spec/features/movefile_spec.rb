@@ -1,10 +1,9 @@
 describe Wordmove::Generators::Movefile do
   let(:movefile) { 'movefile.yml' }
-  let(:tmpdir) { "/tmp/wordmove" }
+  let(:tmpdir) { Dir.mktmpdir('wordmove-') }
 
   before do
     @pwd = Dir.pwd
-    FileUtils.mkdir(tmpdir)
     Dir.chdir(tmpdir)
   end
 

@@ -11,6 +11,7 @@ describe Wordmove::Hook do
     before do
       allow(Wordmove::Hook::Local).to receive(:run)
       allow(Wordmove::Hook::Remote).to receive(:run)
+      allow_any_instance_of(Wordmove::Deployer::Base).to receive(:push_wordpress)
     end
 
     it 'checks the order' do

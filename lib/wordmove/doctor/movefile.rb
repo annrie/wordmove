@@ -81,7 +81,10 @@ module Wordmove
                    'remote'
                  end
 
-        schema = Kwalify::Yaml.load_file("#{__dir__}/../assets/wordmove_schema_#{suffix}.yml")
+        schema = YAML.safe_load_file(
+          "#{__dir__}/../assets/wordmove_schema_#{suffix}.yml",
+          permitted_classes: [], permitted_symbols: [], aliases: true
+        )
 
         Kwalify::Validator.new(schema)
       end

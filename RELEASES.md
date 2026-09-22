@@ -15,7 +15,3 @@ Unofficial Ruby 3.3 / 3.4 compatibility preview. Fixes Logger load order, Psych 
 Install from GitHub with Bundler; this fork is not published to RubyGems. See the [README](https://github.com/annrie/wordmove/blob/v5.3.0.pre.1/README.md) for installation and requirements.
 
 Tests mock external operations. Synchronization against real servers/databases has not been verified. Back up first and validate in a disposable staging environment.
-
-## Upstream history / 上流の履歴
-
-https://github.com/welaika/wordmove/releases
