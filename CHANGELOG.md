@@ -1,3 +1,67 @@
+# v5.3.0.pre.2
+
+## 日本語
+
+Ruby 3.3 / 3.4 対応フォークの修正版プレビューです。MoveDock での実サイト確認中に見つかった SSH 鍵認証・ファイル転送の問題を修正しました。
+
+### 修正内容
+
+- Ed25519 鍵（パスフレーズ付きも含む）の認証に必要な `ed25519` と `bcrypt_pbkdf` を依存関係に追加。
+- rsync のリモートパスを `host:/path` 形式に修正し、SSH のユーザー名・ポート・ゲートウェイ指定を引き継ぐよう修正。
+- rsync の接続・転送失敗を非ゼロ終了として伝播。`--simulate` の失敗も成功扱いにしない。
+- パスに空白や引用符を含む場合の SSH 引数処理と、パスワードを含むコマンドのログ秘匿に対応。
+- Bundler が配置した依存 gem を RuboCop の検査対象から除外。
+
+### 導入・更新
+
+[このバージョンの README](https://github.com/annrie/wordmove/blob/v5.3.0.pre.2/README.md#日本語) を参照してください。新規導入は `git clone --branch v5.3.0.pre.2 https://github.com/annrie/wordmove.git`、既存のクローンは次の手順で更新できます。作業中の変更がある場合は先に保存してください。
+
+```sh
+git fetch origin --tags
+git checkout v5.3.0.pre.2
+bundle install
+bundle exec wordmove --version
+# 5.3.0.pre.2
+```
+
+RubyGems には公開していません。GitHub から Bundler で導入する非公式フォークです。Photocopier は引き続き `v1.5.0.pre.1` を固定して利用します。
+
+### 検証
+
+128 件の RSpec と RuboCop、Ruby 3.3 / 3.4 の CI を確認しています。rsync の回帰テストは一時ディレクトリと SSH 代替スクリプトを使用し、実サイトへ接続せず転送・除外・削除・シミュレーション・異常終了を検証します。MoveDock を使った Local.app の 2 サイトでは同期成功の報告があります。すべての接続先・構成を検証したものではないため、バックアップを取り、ステージング環境で確認してください。
+
+## English
+
+A maintenance preview of the Ruby 3.3 / 3.4 compatibility fork, fixing SSH key authentication and file-transfer issues found while testing real sites with MoveDock.
+
+### Fixes
+
+- Add `ed25519` and `bcrypt_pbkdf` dependencies for Ed25519 SSH keys, including passphrase-protected keys.
+- Use `host:/path` rsync endpoints and preserve SSH user, port and gateway options.
+- Propagate rsync connection and transfer failures as nonzero exits, including failures during `--simulate`.
+- Handle SSH arguments containing spaces or quotes and redact password-bearing commands from logs.
+- Exclude Bundler-installed dependency gems from RuboCop inspection.
+
+### Install or update
+
+See the [README for this version](https://github.com/annrie/wordmove/blob/v5.3.0.pre.2/README.md#english). For a new installation, use `git clone --branch v5.3.0.pre.2 https://github.com/annrie/wordmove.git`. To update an existing clone, save any local changes first, then run:
+
+```sh
+git fetch origin --tags
+git checkout v5.3.0.pre.2
+bundle install
+bundle exec wordmove --version
+# 5.3.0.pre.2
+```
+
+This unofficial fork is installed from GitHub through Bundler, not published to RubyGems. Photocopier remains pinned to `v1.5.0.pre.1`.
+
+### Verification
+
+Verification covers 128 RSpec examples, RuboCop, and CI on Ruby 3.3 / 3.4. The rsync regression tests use temporary directories and an SSH stand-in to check transfers, exclusions, deletion, simulation and failures without connecting to real sites. Successful syncs have been reported for two Local.app sites through MoveDock. This does not cover every server or configuration; back up your data and validate in staging first.
+
+---
+
 # v5.3.0.pre.1
 
 ## 日本語

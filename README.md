@@ -24,7 +24,7 @@ Ruby 3.3または3.4、Git、Bundler 2.5以上5未満が必要です。
 `.ruby-version`は開発用に3.3.12を指定しています。rbenvで3.4を使う場合は`RBENV_VERSION=3.4.x`を設定してください（`x`はインストール済みの版）。
 
 ```sh
-git clone --branch v5.3.0.pre.1 https://github.com/annrie/wordmove.git
+git clone --branch v5.3.0.pre.2 https://github.com/annrie/wordmove.git
 cd wordmove
 bundle config set --local path vendor/bundle
 bundle install
@@ -48,7 +48,7 @@ SSH、rsync、MySQLクライアントなどは使用する同期方式に合わ�
 Local.appにも利用できますが、PHP・MySQLクライアントのPATHとMovefileの接続先・ポートを利用環境に合わせて設定してください。
 特定のホスティングサービス向けの接続設定を提供するものではありません。
 
-**プレビュー版です。** 自動テストは外部通信をモック化し、実際のリモートサイトやDBを使った同期は未検証です。
+**プレビュー版です。** 自動テストは外部通信をモック化しています。MoveDockを使ったLocal.appの2サイトで同期成功の報告がありますが、すべての接続先・構成を検証したものではありません。
 同期前にファイルとDBをバックアップし、まず使い捨てのステージング環境でpush/pullを確認してください。
 MovefileのERBはRubyコードを実行するため、信頼できるMovefileだけを使用してください。
 
@@ -89,7 +89,7 @@ Requires Ruby 3.3 or 3.4, Git, and Bundler >= 2.5 and < 5.
 The development `.ruby-version` selects 3.3.12. To use rbenv with Ruby 3.4, set `RBENV_VERSION=3.4.x`, replacing `x` with your installed patch version.
 
 ```sh
-git clone --branch v5.3.0.pre.1 https://github.com/annrie/wordmove.git
+git clone --branch v5.3.0.pre.2 https://github.com/annrie/wordmove.git
 cd wordmove
 bundle config set --local path vendor/bundle
 bundle install
@@ -112,7 +112,7 @@ BUNDLE_GEMFILE=/absolute/path/to/wordmove/Gemfile bundle exec wordmove doctor
 Install SSH, rsync, MySQL clients, and other tools required by your transport. The default SQL adapter needs WP-CLI; FTP needs lftp.
 For Local.app, configure the PHP/MySQL client PATH and Movefile host/port to match your environment. This fork does not provide hosting-specific connection settings.
 
-**This is a preview.** Automated tests mock external operations; synchronization against real remote sites or databases has not been verified.
+**This is a preview.** Automated tests mock external operations. Successful syncs have been reported for two Local.app sites through MoveDock; this does not cover every server or configuration.
 Back up files and databases, then verify push/pull against a disposable staging environment before using it for production.
 Movefile ERB executes Ruby code: only use trusted Movefiles.
 

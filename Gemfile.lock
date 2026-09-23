@@ -18,7 +18,7 @@ GIT
 PATH
   remote: .
   specs:
-    wordmove (5.3.0.pre.1)
+    wordmove (5.3.0.pre.2)
       activesupport (~> 6.1)
       bcrypt_pbkdf (~> 1.0)
       colorize (~> 0.8.1)
@@ -193,7 +193,7 @@ CHECKSUMS
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
   unicode-display_width (3.3.0) sha256=4b7aa66a4b11db50f6f7e98411215cd0dd10eaecb665d36eec5bcacb3fa0b613
   unicode-emoji (4.3.0) sha256=11c02fa73290378c066bb0562cd4c87d8e1b706fbbe0059ca12746a4244de8ce
-  wordmove (5.3.0.pre.1)
+  wordmove (5.3.0.pre.2)
   zeitwerk (2.8.3) sha256=2c85125a8467ce069e20123d1e709a08955c9d29c118c25b46b7b7fafdbb92e5
 
 BUNDLED WITH
