@@ -54,7 +54,7 @@ describe Wordmove::Deployer::Base do
 
           allow(copier).to receive(:logger=)
 
-          expect(Photocopier::SSH).to receive(:new)
+          expect(Wordmove::SSHAdapter).to receive(:new)
             .with(hash_including(rsync_options: '--dry-run'))
             .and_return(copier)
 

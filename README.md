@@ -16,6 +16,7 @@ WordmoveはWordPressのファイルとデータベースをローカル・リモ
 - スキーマはPsychで読み込み、Kwalifyの検証機能を維持します。古いKwalify YAMLパーサーへの手修正は不要です。
 - [Photocopierの互換性フォーク](https://github.com/annrie/photocopier)を固定して利用します。Net::SSH 7系によりOpenSSL 3へ対応し、新しいNet::Protocolにより`io-wait`の非推奨警告を回避します。
 - Ed25519形式のSSH鍵（パスフレーズ付きも含む）に必要な`ed25519`と`bcrypt_pbkdf`を依存関係に含めています。
+- ディレクトリ転送は`host:/path`形式でrsyncを実行し、転送失敗時は非ゼロで終了します。`--simulate`でも接続エラーを成功扱いにしません。
 
 ### インストール
 
@@ -58,6 +59,7 @@ bundle exec rake  # RSpec + RuboCop
 ```
 
 RuboCopは上流から引き継いだ指摘を`.rubocop_todo.yml`に記録しています。追加した回帰テストは除外していません。
+転送の回帰テストにはrsyncとssh-keygenが必要です。一時フォルダとローカルのSSH代替スクリプトを使い、実サイトへ接続せずに転送・除外・削除・シミュレーション・異常終了を検証します。
 
 Photocopierも同時に修正する場合は`PHOTOCOPIER_PATH=/absolute/path/to/photocopier bundle install`でローカル版を指定できます。
 その状態のGemfile.lockはコミットせず、公開前に環境変数を外して`bundle install`を実行してください。
@@ -79,6 +81,7 @@ This is an **unofficial compatibility fork** of [welaika/wordmove](https://githu
 - Loads schemas through Psych while retaining Kwalify validation, without patching its legacy YAML parser.
 - Pins the [Photocopier compatibility fork](https://github.com/annrie/photocopier), using Net::SSH 7 for OpenSSL 3 and current Net::Protocol to avoid the `io-wait` deprecation warning.
 - Includes `ed25519` and `bcrypt_pbkdf` dependencies for Ed25519 SSH keys, including passphrase-protected keys.
+- Uses `host:/path` rsync endpoints for directory transfers and exits nonzero on transfer failures, including connection errors during `--simulate`.
 
 ### Installation
 
@@ -120,6 +123,7 @@ bundle exec rake  # RSpec + RuboCop
 ```
 
 Existing upstream RuboCop findings are recorded in `.rubocop_todo.yml`; the new regression specs have no exclusions.
+Transfer regression tests require rsync and ssh-keygen. Temporary directories and a local SSH substitute exercise transfers, filters, deletion, simulation, and failure propagation without connecting to real sites.
 
 To develop both forks together, use `PHOTOCOPIER_PATH=/absolute/path/to/photocopier bundle install`.
 Do not commit the resulting local-path Gemfile.lock; unset the variable and run `bundle install` before publishing.
