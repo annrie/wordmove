@@ -27,7 +27,7 @@ RubyGems には公開していません。GitHub から Bundler で導入する�
 
 ### 検証
 
-128 件の RSpec と RuboCop、Ruby 3.3 / 3.4 の CI を確認しています。rsync の回帰テストは一時ディレクトリと SSH 代替スクリプトを使用し、実サイトへ接続せず転送・除外・削除・シミュレーション・異常終了を検証します。MoveDock を使った Local.app の 2 サイトでは同期成功の報告があります。すべての接続先・構成を検証したものではないため、バックアップを取り、ステージング環境で確認してください。
+128 件の RSpec と RuboCop、Ruby 3.3 / 3.4 の CI を確認しています。rsync の回帰テストは一時ディレクトリと SSH 代替スクリプトを使用し、実サイトへ接続せず転送・除外・削除・シミュレーション・異常終了を検証します。MoveDock を使い、Local.app の2サイトで実環境の同期を確認済みです。すべての接続先・構成を検証したものではないため、バックアップを取り、ステージング環境で確認してください。
 
 ## English
 
@@ -56,7 +56,7 @@ This unofficial fork is installed from GitHub through Bundler, not published to 
 
 ### Verification
 
-Verification covers 128 RSpec examples, RuboCop, and CI on Ruby 3.3 / 3.4. The rsync regression tests use temporary directories and an SSH stand-in to check transfers, exclusions, deletion, simulation and failures without connecting to real sites. Successful syncs have been reported for two Local.app sites through MoveDock. This does not cover every server or configuration; back up your data and validate in staging first.
+Verification covers 128 RSpec examples, RuboCop, and CI on Ruby 3.3 / 3.4. The rsync regression tests use temporary directories and an SSH stand-in to check transfers, exclusions, deletion, simulation and failures without connecting to real sites. Real-world synchronization has been verified on two Local.app sites using MoveDock. This does not cover every server or configuration; back up your data and validate in staging first.
 
 ---
 

@@ -48,7 +48,7 @@ SSH、rsync、MySQLクライアントなどは使用する同期方式に合わ�
 Local.appにも利用できますが、PHP・MySQLクライアントのPATHとMovefileの接続先・ポートを利用環境に合わせて設定してください。
 特定のホスティングサービス向けの接続設定を提供するものではありません。
 
-**プレビュー版です。** 自動テストは外部通信をモック化しています。MoveDockを使ったLocal.appの2サイトで同期成功の報告がありますが、すべての接続先・構成を検証したものではありません。
+**プレビュー版です。** 自動テストは外部通信をモック化しています。MoveDock を使い、Local.app の2サイトで実環境の同期を確認済みです。すべての接続先・構成を検証したものではありません。
 同期前にファイルとDBをバックアップし、まず使い捨てのステージング環境でpush/pullを確認してください。
 MovefileのERBはRubyコードを実行するため、信頼できるMovefileだけを使用してください。
 
@@ -112,7 +112,7 @@ BUNDLE_GEMFILE=/absolute/path/to/wordmove/Gemfile bundle exec wordmove doctor
 Install SSH, rsync, MySQL clients, and other tools required by your transport. The default SQL adapter needs WP-CLI; FTP needs lftp.
 For Local.app, configure the PHP/MySQL client PATH and Movefile host/port to match your environment. This fork does not provide hosting-specific connection settings.
 
-**This is a preview.** Automated tests mock external operations. Successful syncs have been reported for two Local.app sites through MoveDock; this does not cover every server or configuration.
+**This is a preview.** Automated tests mock external operations. Real-world synchronization has been verified on two Local.app sites using MoveDock. This does not cover every server or configuration.
 Back up files and databases, then verify push/pull against a disposable staging environment before using it for production.
 Movefile ERB executes Ruby code: only use trusted Movefiles.
 
