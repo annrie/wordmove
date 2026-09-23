@@ -10,7 +10,6 @@ Ruby 3.3 / 3.4 対応フォークの修正版プレビューです。MoveDock �
 - rsync のリモートパスを `host:/path` 形式に修正し、SSH のユーザー名・ポート・ゲートウェイ指定を引き継ぐよう修正。
 - rsync の接続・転送失敗を非ゼロ終了として伝播。`--simulate` の失敗も成功扱いにしない。
 - パスに空白や引用符を含む場合の SSH 引数処理と、パスワードを含むコマンドのログ秘匿に対応。
-- Bundler が配置した依存 gem を RuboCop の検査対象から除外。
 
 ### 導入・更新
 
@@ -40,7 +39,6 @@ A maintenance preview of the Ruby 3.3 / 3.4 compatibility fork, fixing SSH key a
 - Use `host:/path` rsync endpoints and preserve SSH user, port and gateway options.
 - Propagate rsync connection and transfer failures as nonzero exits, including failures during `--simulate`.
 - Handle SSH arguments containing spaces or quotes and redact password-bearing commands from logs.
-- Exclude Bundler-installed dependency gems from RuboCop inspection.
 
 ### Install or update
 
