@@ -15,6 +15,7 @@ WordmoveはWordPressのファイルとデータベースをローカル・リモ
 - ActiveSupportの前にLoggerを読み込み、Thor 1系へ更新しました。
 - スキーマはPsychで読み込み、Kwalifyの検証機能を維持します。古いKwalify YAMLパーサーへの手修正は不要です。
 - [Photocopierの互換性フォーク](https://github.com/annrie/photocopier)を固定して利用します。Net::SSH 7系によりOpenSSL 3へ対応し、新しいNet::Protocolにより`io-wait`の非推奨警告を回避します。
+- Ed25519形式のSSH鍵（パスフレーズ付きも含む）に必要な`ed25519`と`bcrypt_pbkdf`を依存関係に含めています。
 
 ### インストール
 
@@ -77,6 +78,7 @@ This is an **unofficial compatibility fork** of [welaika/wordmove](https://githu
 - Loads Logger before ActiveSupport and upgrades to Thor 1.x.
 - Loads schemas through Psych while retaining Kwalify validation, without patching its legacy YAML parser.
 - Pins the [Photocopier compatibility fork](https://github.com/annrie/photocopier), using Net::SSH 7 for OpenSSL 3 and current Net::Protocol to avoid the `io-wait` deprecation warning.
+- Includes `ed25519` and `bcrypt_pbkdf` dependencies for Ed25519 SSH keys, including passphrase-protected keys.
 
 ### Installation
 

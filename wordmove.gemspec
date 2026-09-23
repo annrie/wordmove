@@ -30,8 +30,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "activesupport", '~> 6.1'
+  spec.add_runtime_dependency "bcrypt_pbkdf", '~> 1.0'
   spec.add_runtime_dependency "colorize", "~> 0.8.1"
   spec.add_runtime_dependency "dotenv", "~> 2.7.5"
+  spec.add_runtime_dependency "ed25519", '~> 1.2'
   spec.add_runtime_dependency "kwalify", "~> 0"
   spec.add_runtime_dependency "photocopier", "= 1.5.0.pre.1"
   spec.add_runtime_dependency "thor", "~> 1.3"
