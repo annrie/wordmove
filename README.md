@@ -1,7 +1,7 @@
 # Wordmove — Ruby 3 compatibility fork / Ruby 3 対応フォーク
 
 [![Tests](https://github.com/annrie/wordmove/actions/workflows/ruby.yml/badge.svg)](https://github.com/annrie/wordmove/actions/workflows/ruby.yml)
-[![GitHub Downloads](https://img.shields.io/github/downloads/annrie/wordmove/total)](https://github.com/annrie/wordmove/releases)
+[![Ruby 3.3 | 3.4](https://img.shields.io/badge/Ruby-3.3%20%7C%203.4-CC342D?logo=ruby&logoColor=white)](wordmove.gemspec)
 
 ## 日本語
 
